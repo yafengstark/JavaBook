@@ -1,5 +1,6 @@
 package com;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
@@ -11,6 +12,9 @@ import java.text.DecimalFormat;
  */
 public class DoubleUtil {
 
+    /**
+     * java保留两位小数
+     */
     public static void format(){
         DecimalFormat    df   = new DecimalFormat("######0.00");
 
@@ -20,8 +24,15 @@ public class DoubleUtil {
         System.out.println(df.format(d1));
         System.out.println(df.format(d2));
         System.out.println(df.format(d3));
+    }
 
-
+    /**
+     * 四舍五入
+     */
+    public static void roundUpRoundDown(){
+        double   f   =   111231.5585;
+        BigDecimal b   =   new   BigDecimal(f);
+        double   f1   =   b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
     }
 
     public static void main(String[] args){
