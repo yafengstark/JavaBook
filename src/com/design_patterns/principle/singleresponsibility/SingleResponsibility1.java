@@ -1,23 +1,28 @@
 package com.design_patterns.principle.singleresponsibility;
 
+/**
+ *
+ */
 public class SingleResponsibility1 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Vehicle vehicle = new Vehicle();
-		vehicle.run("Ħ�г�");
-		vehicle.run("����");
-		vehicle.run("�ɻ�");
+		vehicle.run("私家车");
+		vehicle.run("公交车");
+
 	}
 
 }
 
-// ��ͨ������
-// ��ʽ1
-// 1. �ڷ�ʽ1 ��run�����У�Υ���˵�һְ��ԭ��
-// 2. ����ķ����ǳ��ļ򵥣����ݽ�ͨ�������з�����ͬ���ֽ�ɲ�ͬ�༴��
+/**
+ * 交通工具类
+ *
+ * 违反了单一职责原则
+ *
+  */
 class Vehicle {
 	public void run(String vehicle) {
-		System.out.println(vehicle + " �ڹ�·������....");
+		System.out.println(vehicle + " ....在公路上运行");
 	}
 }

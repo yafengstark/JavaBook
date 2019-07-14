@@ -3,37 +3,33 @@ package com.design_patterns.principle.singleresponsibility;
 public class SingleResponsibility2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		RoadVehicle roadVehicle = new RoadVehicle();
-		roadVehicle.run("Ħ�г�");
-		roadVehicle.run("����");
+		roadVehicle.run("汽车");
+		roadVehicle.run("摩托车");
 		
 		AirVehicle airVehicle = new AirVehicle();
 		
-		airVehicle.run("�ɻ�");
+		airVehicle.run("飞机");
 	}
 
 }
 
-//����2�ķ���
-//1. ���ص�һְ��ԭ��
-//2. �����������ĸĶ��ܴ󣬼�����ֽ⣬ͬʱ�޸Ŀͻ���
-//3. �Ľ���ֱ���޸�Vehicle �࣬�Ķ��Ĵ����Ƚ���=>����3
 
 class RoadVehicle {
 	public void run(String vehicle) {
-		System.out.println(vehicle + "��·����");
+		System.out.println(vehicle + "路上跑");
 	}
 }
 
 class AirVehicle {
 	public void run(String vehicle) {
-		System.out.println(vehicle + "�������");
+		System.out.println(vehicle + "天空");
 	}
 }
 
 class WaterVehicle {
 	public void run(String vehicle) {
-		System.out.println(vehicle + "ˮ������");
+		System.out.println(vehicle + "海上");
 	}
 }
