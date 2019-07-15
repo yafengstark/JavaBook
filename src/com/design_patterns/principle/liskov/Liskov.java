@@ -1,42 +1,49 @@
 package com.design_patterns.principle.liskov;
 
+/**
+ * 在使用继承时，遵循里氏替换原则，在子类中尽量不要重写父类的方法
+ *
+ *
+ * 不符合里氏替换原则
+ */
+
 public class Liskov {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		A a = new A();
-		System.out.println("11-3=" + a.func1(11, 3));
-		System.out.println("1-8=" + a.func1(1, 8));
+    public static void main(String[] args) {
 
-		System.out.println("-----------------------");
-		B b = new B();
-		System.out.println("11-3=" + b.func1(11, 3));//���ﱾ�������11-3
-		System.out.println("1-8=" + b.func1(1, 8));// 1-8
-		System.out.println("11+3+9=" + b.func2(11, 3));
-		
-		
+        A a = new A();
+        System.out.println("11-3=" + a.func1(11, 3));
+        System.out.println("1-8=" + a.func1(1, 8));
 
-	}
+        System.out.println("-----------------------");
+        B b = new B();
+        System.out.println("11-3=" + b.func1(11, 3));//这里本意是求出11-3
+        System.out.println("1-8=" + b.func1(1, 8));// 1-8
+        System.out.println("11+3+9=" + b.func2(11, 3));
+
+
+
+    }
 
 }
 
-// A��
+// A类
 class A {
-	// �����������Ĳ�
-	public int func1(int num1, int num2) {
-		return num1 - num2;
-	}
+    // 返回两个数的差
+    public int func1(int num1, int num2) {
+        return num1 - num2;
+    }
 }
 
-// B��̳���A
-// ������һ���¹��ܣ�������������,Ȼ���9���
+// B类继承了A
+// 增加了一个新功能：完成两个数相加,然后和9求和
 class B extends A {
-	//�����д��A��ķ���, ����������ʶ
-	public int func1(int a, int b) {
-		return a + b;
-	}
+    //这里，重写了A类的方法, 可能是无意识
+    public int func1(int a, int b) {
+        return a + b;
+    }
 
-	public int func2(int a, int b) {
-		return func1(a, b) + 9;
-	}
+    public int func2(int a, int b) {
+        return func1(a, b) + 9;
+    }
 }
