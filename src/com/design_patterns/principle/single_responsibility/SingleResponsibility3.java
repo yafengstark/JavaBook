@@ -1,4 +1,4 @@
-package com.design_patterns.principle.singleresponsibility;
+package com.design_patterns.principle.single_responsibility;
 
 public class SingleResponsibility3 {
 
